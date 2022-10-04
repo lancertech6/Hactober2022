@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <title>PAYMENT FORM</title>
+    <link rel="stylesheet" href="payform.css">
+     <body>
+        <div class="container">
+        <form action="" method="get">
+            <h1 class="heading">Payment Form</h1>
+            <hr>
+            <h2>CONTACT INFORMATION</h2>
+            <p>Name: *<input type="text" name="name" placeholder="Areebxyz" required></p>
+            <fieldset>
+                <legend>Gender*</legend>
+            <p>
+                Male<input type="radio" name="gender" id="Male" required>
+                Female<input type="radio" name="gender" id="Female" required> 
+
+            </p>
+            </fieldset>
+            <p>Adress: <textarea name="address" id="adress" cols="100" rows="8" placeholder="Enter your address"></textarea></p>
+            <p>Email: *<input type="email" name="email" id="email" required placeholder="xyz@gmail.com"></p>
+            <p>Pincode: *<input type="number" name="pincode" id="pincode" required placeholder="123456"></p>
+            <p>Phone Number: *<input type="number" name="ph num" id="ph num" required placeholder="Enter you phone number"></p>
+            
+            <hr>
+            <h2>PAYMENT INFORMATION</h2>
+            <p>Card Type:
+                *<select name="card_type" id="card_type" required>
+                    <option value="">--SELECT A CARD TYPE--</option>
+                    <option value="visa">Visa</option>
+                    <option value="rupay">Rupay</option>
+                    <option value="mastercard">Mastercard</option>
+                </select>
+            </p>
+            <p>Card Number: *<input type="number" name="card_number" id="card_number" required placeholder="1111-2222-3333-4444"></p>
+            <p>Expiration Date *<input type="date" name="expiration_date" id="expiration_date" required></p>
+            <p>CVV *<input type="password" name="cvv" id="cvv" required placeholder="123"></p>
+            <input type="submit" value="PAY NOW">
+        </div>
+
+
+
+        </form>
+    
+
+    </body>
+</head>
