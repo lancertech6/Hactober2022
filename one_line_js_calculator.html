@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  
+<style>
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  
+  height: 100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.main{
+    display: grid;
+    grid-template-rows: repeat(6,60px);
+    grid-template-columns: repeat(4,60px);
+    gap:15px;
+    }
+.box{
+    border-radius: 20px;
+    box-shadow: 0px 3px 4px 1px #DEDEDE;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+.box1{
+  box-shadow: 2px 4px 3px 1px #DDDDDD,-2px -3px 8px 1px #F3F3F3;
+    grid-column: 1/5;
+    background: white;
+  }
+  #shower{
+    
+    border: 1px solid white;
+  }
+  .box:hover{
+    background: #F09636;
+  }
+  .calc{
+    background:white;
+    border-radius: 20px;
+    width:340px;
+    height:520px;
+    padding-left:30px;
+    padding-top: 40px;
+    box-shadow: 5px 3px 5px 0.1px #DDDDDD,-1px 0px 4px 1px #F3F3F3;
+  }
+  
+</style>  
+</head>
+<body>
+  <div class="calc">
+      <div class="main">
+  <div class="box box1"><input type="text" id="shower"></div>
+    <div class="box">(</div>
+    <div class="box">)</div>
+    <div class="box">%</div>
+    <div class="box">Back</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">AC</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">*</div>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">/</div>
+    <div class="box">0</div>
+    <div class="box">+</div>
+    <div class="box">-</div>
+    <div class="box">=</div>
+  </div>
+  </div>
+
+  <script>
+    let box=document.getElementsByClassName('box');
+    Array.from(box).forEach((e)=>{e.addEventListener('click',(b)=>{b.target.innerText==="="?shower.value=eval(shower.value):b.target.innerText ==="AC"?shower.value="":b.target.innerText ==="Back"?shower.value=shower.value.substring(0,shower.value.length-1):shower.value+=b.target.innerText;})});
+  </script>
+
+</body>
+</html> 
