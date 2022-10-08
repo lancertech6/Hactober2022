@@ -7,6 +7,7 @@
 boot:
     mov si, hello_world
     mov ah, 0x0e
+    call print
     hlt
 
 print:
