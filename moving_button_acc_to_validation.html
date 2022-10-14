@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moving validation button</title>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    width:300px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0,0,0,0.1);
+    border-radius: 20px;
+    padding:20px;
+}
+
+form input{
+    height:30px;
+    margin-bottom: 10px;
+}
+
+form input[type="submit"]{
+    width:50%;
+    border-radius: 10px;
+    border:none;
+    background: blue;
+    color:white;
+}
+
+form input[type="submit"]:hover{
+cursor:pointer;
+}
+
+
+/* now we are making style if validation done and not done */
+
+/* if validation done then we will use this class */
+.stop{
+    transition:0.1s;
+}
+
+/* if validation not done then we will use this class */
+.move{
+    transform: translateX(100%);
+}
+    </style>
+</head>
+<body>
+    <form action="#">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" autocomplete="off"/>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"/>
+        <input type="submit" value="submit" id="submit" class="stop" />
+    </form>
+
+
+    
+<script >
+    
+const emailInput=document.getElementById("email");
+const passwordInput=document.getElementById("password");
+const submitButton=document.getElementById("submit");
+
+
+submitButton.addEventListener("mouseover",(button)=>{
+    let email=emailInput.value;
+    let password=passwordInput.value;
+    
+    let validate= /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9]+).([a-z]+)?/.test(email) && /[a-zA-Z0-9]{8}/.test(password)
+
+    if(!validate){
+        button.target.classList.toggle("move");
+        submitButton.style.background="red"
+        
+    }else{
+        button.target.classList.add("stop")
+        submitButton.style.background="green"
+    }
+})
+
+
+// /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9]+).([a-z]+)?/ this is validation for gmail with regular expression
+
+// .test() will gives either true or false
+
+
+
+</script>
+</body>
+</html>
