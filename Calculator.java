@@ -4,7 +4,7 @@ public class Activity_1{
 	public static void main(String[]args){
 	int num1, num2,largest,smallest;
 	Scanner num = new Scanner(System.in);
-	
+
 	System.out.println("Enter first number:");
 	num1 = num.nextInt();
 	System.out.println("Enter second number");

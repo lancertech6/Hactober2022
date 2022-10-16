@@ -4,7 +4,7 @@ public class BubbleSort
     private int size;
     private int max;
     private int min;
-    
+
     public BubbleSort(int size, int max, int min)
     {
         array = new int[size];
